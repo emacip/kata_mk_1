@@ -1,24 +1,20 @@
-# README
+# Customers / Orders / Payments Kata 🧩
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A small Rails exercise focused on:
+- ActiveRecord associations
+- JSON rendering for an API-style index endpoint
+- Avoiding N+1 queries
+- Basic performance constraints
 
-Things you may want to cover:
+The app models a simple e-commerce-ish domain:
 
-* Ruby version
+- **Customer** has many **Orders**
+- **Order** belongs to **Customer** and has many **Payments**
+- **Payment** belongs to **Order**
 
-* System dependencies
+The main endpoint is:
 
-* Configuration
+- `GET /customers`
 
-* Database creation
+---
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
