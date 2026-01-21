@@ -23,7 +23,11 @@ class CustomerSerializer
 
     when :with_latest_payment
       {
-
+        "name" => @customer.name,
+        "latest_payment" => @customer.latest_payment_provider && {
+          "provider" => @customer.latest_payment_provider,
+          "status" => @customer.latest_payment_status
+        }
       }
     else
       raise ArgumentError, "Unknown serializer view: #{@view.inspect}"
